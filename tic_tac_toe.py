@@ -82,6 +82,29 @@ def legal_moves(board):
     
     return moves
 
+def winner(board):
+    """Determine the game winner"""
+    WAYS_TO_WIN = (
+        (0, 1, 2),
+        (3, 4, 5),
+        (6, 7, 8),
+        (0, 3, 6),
+        (1, 4, 7),
+        (2, 5, 8),
+        (0, 4, 8),
+        (2, 4, 6),
+    )
+
+    for row in WAYS_TO_WIN:
+        if board[row[0]] == board[row[1]] == board[row[2]] != EMPTY:
+            winner = board[row[0]]
+            return winner
+        
+    if EMPTY not in board:
+        return TIE
+    
+    return None
+
 
 # START: TEST SECTION
 #display_instruct()
@@ -95,8 +118,9 @@ def legal_moves(board):
 # print(new_board())
 # game_board = new_board()
 # display_board(game_board)
-# game_board = new_board()
+game_board = new_board()
 # print(legal_moves(game_board))
+# print(winner(game_board))
 # END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
