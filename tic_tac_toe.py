@@ -36,9 +36,20 @@ def ask_yes_no(question):
         response = input(question).lower()
     return response
 
+def ask_number(question, low, high):
+    """Ask for a number within a range"""
+    response = None
+    while response not in range(low, high):
+        response = int(input(question))
+    return response
+
+
 # START: TEST SECTION
 #display_instruct()
 # quess = ask_yes_no("Is it yes or is it no?: ")
+# print(quess)
+# range includes low + excludes high (low = 1 high = 10 accepts a number between 1 - 9)
+# quess = ask_number("Give me a number between 1 - 10", 1, 10)
 # print(quess)
 # END: TEST SECTION
 
