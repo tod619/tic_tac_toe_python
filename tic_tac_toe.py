@@ -29,6 +29,17 @@ def display_instruct():
         """
     )
 
-display_instruct()
+def ask_yes_no(question):
+    """Ask the user a yes or no question"""
+    response = None
+    while response not in ("y", "n"):
+        response = input(question).lower()
+    return response
+
+# START: TEST SECTION
+#display_instruct()
+# quess = ask_yes_no("Is it yes or is it no?: ")
+# print(quess)
+# END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
