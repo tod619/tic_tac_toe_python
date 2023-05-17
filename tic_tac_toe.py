@@ -58,6 +58,13 @@ def pieces():
     
     return computer, human
 
+def new_board():
+    """Create new game board"""
+    board = []
+    for square in range(NUM_SQUARES):
+        board.append(EMPTY)
+    return board
+
 
 # START: TEST SECTION
 #display_instruct()
@@ -68,6 +75,7 @@ def pieces():
 # print(quess)
 # players = pieces()
 # print(players)
+# print(new_board())
 # END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
