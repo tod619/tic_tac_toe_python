@@ -43,6 +43,21 @@ def ask_number(question, low, high):
         response = int(input(question))
     return response
 
+def pieces():
+    """Determine who goes first and assign play pieces based on this choice"""
+    go_first = ask_yes_no("Do you require the first move? (y/n): ")
+    
+    if go_first == "y":
+        print("\nThe player has decided to go first this time.")
+        human = X
+        computer = O
+    else:
+        print("\nThe computer will go first this time.")
+        computer = X
+        human = 0
+    
+    return computer, human
+
 
 # START: TEST SECTION
 #display_instruct()
@@ -51,6 +66,8 @@ def ask_number(question, low, high):
 # range includes low + excludes high (low = 1 high = 10 accepts a number between 1 - 9)
 # quess = ask_number("Give me a number between 1 - 10", 1, 10)
 # print(quess)
+# players = pieces()
+# print(players)
 # END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
