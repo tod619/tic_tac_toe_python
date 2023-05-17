@@ -118,6 +118,41 @@ def human_move(board, human):
     print("Fine...")
     return move
 
+def computer_move(board, computer, human):
+    """Make the compueters move"""
+    # Make a copy to work with since the function will be changing the board
+    board = board[:]
+
+    # the best positions to have in order
+    BEST_MOVES = (4, 0, 2, 6, 8, 1, 3, 5, 7)
+
+    print("The computer will take square number", end=" ")
+
+    # If the computer can win, take that move
+    for move in legal_moves(board):
+        board[move] = computer
+
+        if winner(board) == computer:
+            print(move)
+            return move
+        # done check this move, undo it
+        board[move] = EMPTY
+    
+    # If the player can win, block that move
+    for move in legal_moves(board):
+        board[move] = human
+        if winner(board) == human:
+            print(move)
+            return move
+        # done checking this move, undo it
+        board[move] = EMPTY
+
+    # Since no one can win on the next move, pick the best open square
+    for move in BEST_MOVES:
+        if move in legal_moves(board):
+            print(move)
+            return move
+
 
 # START: TEST SECTION
 #display_instruct()
@@ -131,7 +166,7 @@ def human_move(board, human):
 # print(new_board())
 # game_board = new_board()
 # display_board(game_board)
-game_board = new_board()
+# game_board = new_board()
 # player = pieces()
 # print(legal_moves(game_board))
 # print(winner(game_board))
