@@ -193,4 +193,30 @@ def congrat_winner(the_winner, computer, human):
 # human_move(game_board, player)
 # END: TEST SECTION
 
+# Create the main function
+def main():
+    display_instruct()
+    computer, human = pieces()
+    turn = X
+    board = new_board()
+    display_board(board)
+
+    # Main game loop
+    while not winner(board):
+        if turn == human:
+            move = human_move(board, human)
+            board[move] = human
+        else:
+            move = computer_move(board, computer, human)
+            board[move] = computer
+        
+        display_board(board)
+        turn = next_turn(turn)
+
+    the_winner = winner(board)
+    congrat_winner(the_winner, computer, human)
+
+# start the game
+main()
+
 input("\nPress Enter to exit the program.")
