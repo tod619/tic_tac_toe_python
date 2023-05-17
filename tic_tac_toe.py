@@ -54,7 +54,7 @@ def pieces():
     else:
         print("\nThe computer will go first this time.")
         computer = X
-        human = 0
+        human = O
     
     return computer, human
 
