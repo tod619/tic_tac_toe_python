@@ -159,6 +159,20 @@ def next_turn(turn):
         return O
     else:
         return X
+    
+def congrat_winner(the_winner, computer, human):
+    """Congratulate the winner of the game"""
+    if the_winner != TIE:
+        print(f"{the_winner} has won the game!")
+    else:
+        print("It is a TIE!\n")
+    
+    if the_winner == computer:
+        print("The computer has won and kicked your ass!")
+    elif the_winner == human:
+        print("The player has won and beaten the machine!")
+    elif the_winner == TIE:
+        print("It's a tie. There are no winners, only loosers!")
 
 # START: TEST SECTION
 #display_instruct()
