@@ -153,6 +153,12 @@ def computer_move(board, computer, human):
             print(move)
             return move
 
+def next_turn(turn):
+    """Switch turns"""
+    if turn == X:
+        return O
+    else:
+        return X
 
 # START: TEST SECTION
 #display_instruct()
