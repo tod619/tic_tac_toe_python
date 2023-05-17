@@ -73,6 +73,16 @@ def display_board(board):
     print("\t","---------")
     print(f"\t {board[6]} | {board[7]} | {board[8]}")
 
+def legal_moves(board):
+    """Create a list of all the available legal moves left"""
+    moves = []
+    for square in range(NUM_SQUARES):
+        if board[square] == EMPTY:
+            moves.append(square)
+    
+    return moves
+
+
 # START: TEST SECTION
 #display_instruct()
 # quess = ask_yes_no("Is it yes or is it no?: ")
@@ -85,6 +95,8 @@ def display_board(board):
 # print(new_board())
 # game_board = new_board()
 # display_board(game_board)
+# game_board = new_board()
+# print(legal_moves(game_board))
 # END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
