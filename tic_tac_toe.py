@@ -65,6 +65,13 @@ def new_board():
         board.append(EMPTY)
     return board
 
+def display_board(board):
+    """Display Game board on the screen"""
+    print(f"\n\t {board[0]} | {board[1]} | {board[2]}")
+    print("\t","---------")
+    print(f"\t {board[3]} | {board[4]} | {board[5]}")
+    print("\t","---------")
+    print(f"\t {board[6]} | {board[7]} | {board[8]}")
 
 # START: TEST SECTION
 #display_instruct()
@@ -76,6 +83,8 @@ def new_board():
 # players = pieces()
 # print(players)
 # print(new_board())
+# game_board = new_board()
+# display_board(game_board)
 # END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
