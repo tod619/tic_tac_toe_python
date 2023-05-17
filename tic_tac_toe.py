@@ -105,6 +105,19 @@ def winner(board):
     
     return None
 
+def human_move(board, human):
+    """Get Player Move"""
+    legal = legal_moves(board)
+    move = None
+
+    while move not in legal:
+        move = ask_number("Where will you move? (0 - 8): ", 0, NUM_SQUARES)
+        if move not in legal:
+            print("\nThat square is already occupied.")
+    
+    print("Fine...")
+    return move
+
 
 # START: TEST SECTION
 #display_instruct()
@@ -119,8 +132,10 @@ def winner(board):
 # game_board = new_board()
 # display_board(game_board)
 game_board = new_board()
+# player = pieces()
 # print(legal_moves(game_board))
 # print(winner(game_board))
+# human_move(game_board, player)
 # END: TEST SECTION
 
 input("\nPress Enter to exit the program.")
